@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riconoscimento Cifre</title>
+    <!-- Aggiungi Bootstrap per il design moderno -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Stili personalizzati per la canvas */
+        #canvas {
+            border: 2px solid black;
+            cursor: crosshair;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .result-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Riconoscimento Cifre</h1>
+        <p class="text-center">Disegna una cifra sulla canvas e clicca su "Predici" per ottenere il risultato!</p>
+
+        <!-- Container per la canvas -->
+        <div class="canvas-container">
+            <canvas id="canvas" width="280" height="280"></canvas>
+        </div>
+
+        <!-- Bottoni per predire e pulire -->
+        <div class="row justify-content-center">
+            <button id="predictButton" class="btn btn-primary">Predici</button>
+            <button id="clearButton" class="btn btn-secondary ml-2">Pulisci</button>
+        </div>
+
+        <!-- Risultato della previsione -->
+        <div id="result" class="result-container">
+            <h3 id="predictionResult">La previsione sarà mostrata qui.</h3>
+            <h4 id="confidenceResult">Probabilità: -</h4>
+        </div>
+    </div>
+
+    <!-- Aggiungi JS di Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Link al file JavaScript esterno -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
